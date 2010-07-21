@@ -1,11 +1,11 @@
 #!/bin/bash
 
 function backup_file {
-        mv $1{,.backup}
+        cp $1{,.backup}
 }
 
 function restore_file {
-        mv $1{.backup,}
+        cp $1{.backup,} && rm $1.backup
 }
 
 function start_puppet_agent {

@@ -1,8 +1,6 @@
 #!/bin/bash
 
-
-. local_setup.sh
-
+source spec/setup.sh
 backup_file /etc/hosts
 
 echo '127.0.0.1 localhost localhost.localdomain' > /etc/hosts
