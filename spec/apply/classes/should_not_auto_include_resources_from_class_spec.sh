@@ -4,7 +4,7 @@ set -e
 #
 . local_setup.sh
 
-$BIN/puppet apply <<PP | tee /tmp/class_not_include-$$
+puppet apply <<PP | tee /tmp/class_not_include-$$
 class x {
   notify{'NEVER':}
 }

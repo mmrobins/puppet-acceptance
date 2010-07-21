@@ -5,7 +5,7 @@ set -e
 . local_setup.sh
 OUTFILE=/tmp/class_undef_override_out-$$
 echo 'hello world!' > /tmp/class_undef_override_test-$$
-$BIN/puppet apply <<PP | tee $OUTFILE
+puppet apply <<PP | tee $OUTFILE
 class parent {
   file { 'test':
     path => '/tmp/class_undef_file-$$',

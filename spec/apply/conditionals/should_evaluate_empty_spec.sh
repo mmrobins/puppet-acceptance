@@ -6,7 +6,7 @@
 
 OUTFILE="/tmp/spec-$$.log"
 
-$BIN/puppet apply <<PP | tee $OUTFILE
+puppet apply <<PP | tee $OUTFILE
 if \$undef_var {
 } else {
   notice('undef')

@@ -7,7 +7,7 @@ set -e
 
 OUTFILE="/tmp/spec-$$.log"
 
-$BIN/puppet apply <<PP | tee $OUTFILE 
+puppet apply <<PP | tee $OUTFILE 
 if( 1 == 2) {
   notice('if')
 } elsif(2 == 3) {

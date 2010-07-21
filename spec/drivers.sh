@@ -4,7 +4,7 @@
 function driver_standalone {
     function execute_manifest {
         mkdir -p /tmp/puppet-$$-standalone/manifests
-        cat | $BIN/puppet apply --confdir /tmp/puppet-$$-standalone --debug --manifestdir /tmp/puppet-$$-standalone/manifests --modulepath /tmp/puppet-$$-standalone/modules "$@" 
+        cat | puppet apply --confdir /tmp/puppet-$$-standalone --debug --manifestdir /tmp/puppet-$$-standalone/manifests --modulepath /tmp/puppet-$$-standalone/modules "$@" 
     }
 
     function puppet_conf {
@@ -28,7 +28,7 @@ function driver_standalone_using_files {
     function execute_manifest {
         cat > /tmp/manifest-$$.pp
         mkdir -p /tmp/puppet-$$-standalone/manifests
-        $BIN/puppet apply --confdir /tmp/puppet-$$-standalone --debug  --manifestdir /tmp/puppet-$$-standalone/manifests --modulepath /tmp/puppet-$$-standalone/modules "$@" /tmp/manifest-$$.pp
+        puppet apply --confdir /tmp/puppet-$$-standalone --debug  --manifestdir /tmp/puppet-$$-standalone/manifests --modulepath /tmp/puppet-$$-standalone/modules "$@" /tmp/manifest-$$.pp
     }
 
 }

@@ -18,7 +18,7 @@ if ! getent group bozo_test_group; then
 fi
 
 # create user with group
-"${BIN}"/puppet resource user bozo ensure=present gid=bozo_test_group
+puppet resource user bozo ensure=present gid=bozo_test_group
 
 # check that user exists and has specified group
 gid=$( getent group bozo_test_group | awk -F':' '{print $3}' )

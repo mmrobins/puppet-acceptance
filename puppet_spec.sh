@@ -18,16 +18,6 @@ trap "print_results; exit" SIGINT
 TEST_DIR=$1
 : ${TEST_DIR:='./spec'}
 
-if ! [ -f local_setup.sh ] ; then
-        echo '
-You must create a local_setup.sh so we know where to find the puppet libs.
-
-Example:
-'
-        cat local_setup.example.sh
-        exit 2
-fi
-
 let FAILURES=0
 let TOTAL=0
 let PENDING=0
